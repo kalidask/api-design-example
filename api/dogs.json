@@ -3,5 +3,41 @@
     "info": {
         "title": "Dogs",
         "description": "doggy data"
+    },
+    "paths": {
+        "/breeds": {
+            "get": {
+                "parameters": [
+                    {
+                        "name": "size",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/breed"
+                        }
+                    }
+                }
+            },
+            "post": {},
+            "delete": {}
+        }
+    },
+    "definitions": {
+        "breed": {
+            "title": "Root Type",
+            "description": "The root of the breed type's schema.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "string"
+                }
+            }
+        }
     }
 }
